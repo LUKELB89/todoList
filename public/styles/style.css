@@ -1,0 +1,129 @@
+/* Reset some default styles */
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("../images/todoBG.png");
+  background-size: 5%; /* Set the size to % of its original size */
+  background-repeat: repeat; /* Repeat the image */
+}
+
+/* Container for day tasks and week tasks */
+.day-container,
+.week-container {
+  width: 45%; /* Adjust the width as needed */
+  margin: 10px;
+  display: inline-block; /* Display divs next to each other */
+  vertical-align: top; /* Align divs at the top */
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff8e3; /* Background color for the containers (paper-like) */
+  font-family: "Delicious Handrawn", cursive;
+  /*font-family: "Fasthand", cursive;*/
+}
+
+/* Container titles */
+.day-container h1,
+.week-container h1 {
+  font-size: 26px;
+  margin-bottom: 10px;
+  color: #333; /* Title text color */
+}
+
+/* Forms and buttons */
+.day-container form,
+.week-container form {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+#inputField,
+#inputField2 {
+  flex: 1;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 5px; /* Add some spacing between input and button */
+}
+
+button[type="submit"],
+button[type="submit2"] {
+  padding: 8px 15px;
+  font-size: 16px;
+  background-color: #007bff; /* Blue for "Add task" buttons */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* List items */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.item {
+  padding: 8px;
+  font-size: 19px;
+  display: flex;
+  align-items: center; /* Center items vertically within each list item */
+  position: relative; /* Add relative positioning to handle the underline */
+}
+
+/* Style the content within the list item (excluding the button) */
+.item > :not(.delete-button) {
+  flex: 1;
+  border-bottom: 1px solid #ccc;
+  overflow: hidden; /* Ensure text doesn't extend beyond the button */
+}
+
+/* Style the underline effect */
+.item::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px; /* Height of the underline */
+  background-color: #007bff; /* Color of the underline (blue) */
+  transform: scaleX(0); /* Initially hidden */
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Style the list item container */
+.list-item-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px; /* Add spacing between list items */
+}
+
+/* Hover effect for list items */
+.item:hover {
+  font-weight: bold;
+}
+
+.lineThrough {
+  text-decoration: line-through;
+}
+
+/* Delete buttons */
+.delete-button {
+  padding: 8px 15px;
+  font-size: 16px;
+  background-color: #ff0800 !important; /* Red for "Delete" buttons */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  /* Add margin-left to push it to the right */
+  margin-left: auto;
+}
+
+button:hover {
+  transform: scale(1.08); /* Increase size by 8% on hover */
+}

@@ -1,0 +1,49 @@
+<%- include('./partials/header.ejs') %>
+
+    <body>
+        <div class="day-container">
+            <h1 id="title">Things to do today: <%= currentDate%>
+            </h1>
+            <form id="myForm" action="/submit" method="post">
+                <input type="text" id="inputField" name="task" placeholder="Enter task...">
+                <button type="submit">Add task</button>
+            </form>
+
+            <ul>
+                <% dayTasks.forEach((task, index)=> { %>
+                    <div class="list-item-container">
+                        <li class="item">
+                            <%= task.task %>
+                        </li>
+                        <form action="/delete" method="post" class="delete-form">
+                            <button class="delete-button" type="submit" name="taskId"
+                                value="<%= task._id %>">Delete</button>
+                        </form>
+                    </div>
+                    <% }); %>
+            </ul>
+        </div>
+
+        <div class="week-container">
+            <h1 id="title">Things to do this week</h1>
+            <form id="myForm2" action="/submit2" method="post">
+                <input type="text" id="inputField2" name="weeklyTask" placeholder="Enter task...">
+                <button type="submit">Add task</button>
+            </form>
+
+            <ul>
+                <% weekTasks.forEach((task, index)=> { %>
+                    <div class="list-item-container">
+                        <li class="item">
+                            <%= task.task %>
+                        </li>
+                        <form action="/delete2" method="post" class="delete-form">
+                            <button class="delete-button" type="submit" name="taskId"
+                                value="<%= task._id %>">Delete</button>
+                        </form>
+                    </div>
+                    <% }); %>
+            </ul>
+        </div>
+
+        <%- include('./partials/footer.ejs') %>
