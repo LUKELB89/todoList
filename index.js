@@ -6,14 +6,14 @@ const mongoose = require('mongoose')
 // Connect to the database
 async function connectToMongoDB() {
     try {
-        await mongoose.connect('mongodb+srv://LUKELB89:Test123@clustertodo.e7kvupt.mongodb.net/todolistDB', { useNewUrlParser: true });
+        await mongoose.connect('mongodb://127.0.0.1:27017/todolistDB', { useNewUrlParser: true });
         console.log('Connected to MongoDB successfully');
     } catch (error) {
         console.error('MongoDB connection error:', error);
     }
 }
 
-connectToMongoDB(); //'mongodb://127.0.0.1:27017/todolistDB' <= this was the code to connect to local DB//
+connectToMongoDB();
 
 const app = express()
 const port = 3000;
