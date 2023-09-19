@@ -10,7 +10,7 @@ node_modules/
 
 # User-specific files
 .DS_Store
-.vscode/
+ 
 
 # Build and output directories (adjust as needed)
 dist/
