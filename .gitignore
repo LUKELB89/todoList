@@ -1,0 +1,29 @@
+# Node.js
+node_modules/
+
+# Logs
+*.log
+
+# Environment files
+.env
+.env.*
+
+# User-specific files
+.DS_Store
+.vscode/
+
+# Build and output directories (adjust as needed)
+dist/
+build/
+out/
+
+# Dependency lock files
+yarn.lock
+package-lock.json
+
+# Temporary files and editor-specific files (optional)
+.*.swp
+.*.swo
+
+# IDE and editor configuration files (optional, adjust for your IDE)
+.vscode/
