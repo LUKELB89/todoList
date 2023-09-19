@@ -20,13 +20,7 @@ const port = 3000;
 
 app.use(express.static("public"))
 
-// Database variables
-const dailyTasksDB = []
-const weeklyTasksDB = []
-
-// Variables needed
-const tasks = []
-const weeklyTask = []
+// Variables needed to display the current date
 
 const date = new Date();
 
@@ -63,17 +57,16 @@ const weekly = new WeekTask({
     task: "Go to the gym"
 })
 
-const daily2 = new DayTask({
-    task: "Buy bread"
-})
 
-// Save and insert then comment out to avoid repetition
+// If you want to test, save and insert, then comment out to avoid repetition
+
 // daily.save();
-//daily2.save()
+
 // weekly.save();
 
 
 // Paths
+
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static('public'));
